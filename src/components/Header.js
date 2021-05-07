@@ -3,16 +3,24 @@ import styled from "styled-components";
 const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  height: 100px;
+  align-items: center;
   grid-gap: 5px;
   text-align: center;
   div {
     width: 100%;
     img {
       width: calc(7vw + 16px);
+      transition: 0.1s linear;
+      &:hover {
+        width: calc(7.5vw + 20px);
+      }
     }
     span {
       font-size: calc(1vw + 10px);
+      transition: 0.1s linear;
+      &:hover {
+        font-size: calc(1.1vw + 12px);
+      }
     }
   }
 `;

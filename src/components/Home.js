@@ -6,22 +6,23 @@ import { HelmetTitle } from "../share";
 
 const Container = styled.div`
   margin-top: 20px;
-  padding: 40px;
+  padding: 2.5%;
   color: white;
 `;
 
 const Main = styled.div`
-  margin-top: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 9vw;
+  font-size: 7vw;
   font-weight: 100;
-  height: 50vh;
+  margin-top: 2em;
+  margin-bottom: 1.5em;
 `;
 const Footer = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
   flex-direction: column;
   height: 30vh;
   font-size: 14px;
