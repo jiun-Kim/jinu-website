@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120px" height="44px" viewBox="0 0 120 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>JINU-BLACK</title>
+    <g id="JINU-BLACK" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g>
+            <rect id="Bar-bottom" stroke="#FFFFFF" stroke-width="2" x="1" y="41" width="118" height="2"></rect>
+            <rect id="Bar-top" stroke="#FFFFFF" stroke-width="2" x="1" y="1" width="118" height="2"></rect>
+            <rect id="inner-background" fill="#FFFFFF" x="22" y="12" width="76" height="20"></rect>
+            <text id="Program.Development." font-family="AppleSDGothicNeo-ExtraBold, Apple SD Gothic Neo" font-size="6" font-weight="600" fill="#FFFFFF">
+                <tspan x="19" y="38">Program.Development.Studio</tspan>
+            </text>
+            <polyline id="j" stroke="#222F3E" stroke-width="5" stroke-linecap="square" points="21.5 30.5100373 32.5 30.5100373 32.5 16.1085044 32.5 13.5100373"></polyline>
+            <line x1="45.5" y1="13.5" x2="45.5" y2="30.5" id="i" stroke="#222F3E" stroke-width="5" stroke-linecap="square"></line>
+            <polyline id="n" stroke="#222F3E" stroke-width="5" stroke-linecap="square" points="70.5 13.5100373 70.5 30.5 69.6170498 30.5 59.6971355 13.5 58.5 13.5 58.5 30.5"></polyline>
+            <polyline id="u" stroke="#222F3E" stroke-width="5" stroke-linecap="square" points="83.5 13.5 83.5 30.5 96.5 30.5 96.5 14.9319928 96.5 13.5"></polyline>
+        </g>
+    </g>
+</svg>
