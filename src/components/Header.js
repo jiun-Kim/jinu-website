@@ -5,6 +5,7 @@ const Container = styled.div`
   grid-template-columns: repeat(4, 1fr);
   align-items: center;
   text-align: center;
+  padding: 1%;
   div {
     width: 100%;
     img {
