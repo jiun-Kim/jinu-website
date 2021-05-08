@@ -25,7 +25,6 @@ const Footer = styled.div`
   justify-content: space-between;
   align-items: flex-end;
   flex-direction: column;
-  height: 30vh;
   font-size: 14px;
   overflow: hidden;
   p {
@@ -34,6 +33,7 @@ const Footer = styled.div`
     white-space: nowrap;
   }
   span {
+    margin-top: 15px;
     margin-bottom: 15px;
   }
 `;
