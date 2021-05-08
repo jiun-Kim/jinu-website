@@ -5,9 +5,12 @@ import { sliderText } from "./animation";
 import { HelmetTitle } from "../share";
 
 const Container = styled.div`
-  margin-top: 20px;
-  padding: 2.5%;
+  padding: 2.5% 2% 0 2%;
   color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
 `;
 
 const Main = styled.div`
@@ -16,8 +19,6 @@ const Main = styled.div`
   align-items: center;
   font-size: 7vw;
   font-weight: 100;
-  margin-top: 2em;
-  margin-bottom: 1.5em;
 `;
 const Footer = styled.div`
   display: flex;
@@ -31,6 +32,9 @@ const Footer = styled.div`
     font-size: calc(1vw + 14px);
     margin-top: 50px;
     white-space: nowrap;
+  }
+  span {
+    margin-bottom: 15px;
   }
 `;
 const Text = styled.p`

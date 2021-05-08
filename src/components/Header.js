@@ -4,7 +4,6 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   align-items: center;
-  grid-gap: 5px;
   text-align: center;
   div {
     width: 100%;
