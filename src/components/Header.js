@@ -5,18 +5,18 @@ const Container = styled.div`
   grid-template-columns: repeat(4, 1fr);
   align-items: center;
   text-align: center;
-  box-sizing: box-sizing;
+  box-sizing: border-box;
+  padding: 3%;
   div {
-    width: 100%;
     img {
-      width: calc(7vw + 16px);
+      width: calc(7vw + 20px);
       transition: 0.1s linear;
       &:hover {
         width: calc(7.5vw + 20px);
       }
     }
     span {
-      font-size: calc(1vw + 10px);
+      font-size: calc(1vw + 8px);
       transition: 0.1s linear;
       &:hover {
         font-size: calc(1.1vw + 12px);

@@ -5,7 +5,7 @@ import { sliderText } from "./animation";
 import { HelmetTitle } from "../share";
 
 const Container = styled.div`
-  padding: 2.5% 2% 0 2%;
+  padding: 0 2% 0 2%;
   color: white;
   display: flex;
   flex-direction: column;
