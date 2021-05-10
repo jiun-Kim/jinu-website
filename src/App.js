@@ -1,7 +1,7 @@
 import { GlobalStyle } from "./components/globalStyles";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "./components/Home";
-import Service from "./components/Searvice";
+import Home from "./screen/Home";
+import Service from "./screen/Searvice";
 import { HelmetProvider } from "react-helmet-async";
 
 function App() {
