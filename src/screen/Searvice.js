@@ -1,29 +1,39 @@
 import styled from "styled-components";
 import { blink } from "../components/animation";
+import { HelmetTitle } from "../share";
 
 const Container = styled.div`
-  margin-top: 20px;
-  padding: 40px;
+  padding: 0 2% 0 2%;
   color: white;
+  height: 100vh;
   display: flex;
   justify-content: center;
-  span {
-    cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  a {
+    margin-bottom: 5%;
   }
 `;
 const Test = styled.span`
+  box-sizing: border-box;
   font-size: 5vw;
-  margin-top: 250px;
   color: white;
   animation: ${blink} 2s linear infinite;
+`;
+const GoToHome = styled.span`
+  cursor: pointer;
+  &:hover {
+    color: #f39c12;
+  }
 `;
 const Service = () => {
   return (
     <Container>
-      <Test>Sorry... It will be on service soon</Test>
+      <HelmetTitle title="SERVICE" />
       <a href="/">
-        <span>Go back to home</span>
+        <GoToHome>🏚 Go back to home</GoToHome>
       </a>
+      <Test>Sorry... It will be on service soon</Test>
     </Container>
   );
 };

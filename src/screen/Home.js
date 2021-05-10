@@ -7,7 +7,7 @@ import Footer from "../components/footer";
 const Home = () => {
   return (
     <>
-      <HelmetTitle title="Home" />
+      <HelmetTitle title="HOME" />
       <FirstHome />
       <SecondHome />
       <Main />
