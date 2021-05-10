@@ -74,7 +74,6 @@ const Main = () => {
   const getEvent = () => {
     const scrollLocation = document.documentElement.scrollTop;
     const windowHeight = window.innerHeight;
-    console.log(scrollLocation);
     if (windowHeight * 1.5 < scrollLocation) {
       return setScroll(true);
     } else {

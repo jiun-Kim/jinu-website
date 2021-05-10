@@ -5,7 +5,7 @@ const Container = styled.div`
   color: white;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: flex-end;
   height: 100vh;
 `;
@@ -13,9 +13,7 @@ const Container = styled.div`
 const Header = styled.div`
   height: 33%;
 `;
-const Main = styled.div`
-  height: 33%;
-`;
+const Main = styled.div``;
 const FooterBox = styled.div`
   display: flex;
   align-items: flex-end;
@@ -34,7 +32,7 @@ const Email = styled.span`
 const Footer = () => {
   return (
     <Container>
-      <Header></Header>
+      <Header />
       <Main>
         <span>
           Contact Email :{" "}
