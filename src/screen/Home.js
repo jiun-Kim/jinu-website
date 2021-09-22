@@ -3,13 +3,11 @@ import { appImage, appUrl } from "../apps";
 import App from "../components/App";
 import Header from "../components/Header";
 
-const Container = styled.div`
-  height: 70vh;
-`;
+const Container = styled.div``;
 
 const Main = styled.main`
-  padding: 30px;
-  height: 100%;
+  padding: 50px 30px;
+  height: 100vh;
 `;
 
 const Title = styled.h2`
@@ -27,7 +25,7 @@ const Apps = styled.div`
 
 const Footer = styled.footer`
   width: 100%;
-  height: 100px;
+  height: 120px;
   background-color: ${(props) => props.theme.mainColor};
   color: white;
   display: flex;

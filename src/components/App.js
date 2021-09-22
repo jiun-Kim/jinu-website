@@ -20,7 +20,7 @@ const TitleBox = styled.div`
   position: absolute;
   bottom: -20px;
   color: #222f3e;
-  background-color: #dfe6e9;
+  background-color: ${(props) => props.theme.bgColor};
   padding: 15px 0px;
   border-radius: 10px;
   box-shadow: 0px 5px 5px black;
