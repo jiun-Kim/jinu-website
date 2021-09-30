@@ -14,12 +14,12 @@ const Container = styled.a`
 
 const Image = styled.img`
   width: 300px;
+  height: 230px;
 `;
 const TitleBox = styled.div`
   width: 90%;
   position: absolute;
   bottom: -20px;
-  color: #222f3e;
   background-color: ${(props) => props.theme.bgColor};
   padding: 15px 0px;
   border-radius: 10px;
@@ -35,7 +35,7 @@ const AppSubtitle = styled.span`
   font-weight: 500;
 `;
 
-const App = ({ appUrl, imageUrl, title, text }) => (
+const AppImage = ({ appUrl, imageUrl, title, text }) => (
   <Container href={appUrl} target="_blank">
     <TitleBox>
       <AppTitle>{title}</AppTitle>
@@ -45,4 +45,4 @@ const App = ({ appUrl, imageUrl, title, text }) => (
   </Container>
 );
 
-export default App;
+export default AppImage;

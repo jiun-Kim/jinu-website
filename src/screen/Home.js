@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { appImage, appUrl } from "../apps";
-import App from "../components/App";
+import AppImage from "../components/AppImage";
 import Header from "../components/Header";
 
 const Container = styled.div``;
@@ -41,14 +41,14 @@ export default () => (
     <Main>
       <Title>New Release</Title>
       <Apps>
-        <App
+        <AppImage
           appUrl={appUrl.watcha}
           text="This app is the Netflix cloning app"
           imageUrl={appImage.watcha}
         />
-        <App
+        <AppImage
           appUrl={appUrl.colorselector}
-          text="Color selector app for ios & android & web"
+          text="Color selector app for ios & android"
           imageUrl={appImage.colorselector}
         />
       </Apps>
