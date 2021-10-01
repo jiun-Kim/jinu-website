@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Container = styled.a`
+const LinkContainer = styled.a`
   padding: 30px;
   width: 100%;
   height: 230px;
@@ -10,6 +10,19 @@ const Container = styled.a`
   align-items: center;
   border-radius: 30px;
   position: relative;
+`;
+
+const BoxContainer = styled.div`
+  padding: 30px;
+  width: 100%;
+  height: 230px;
+  background-image: linear-gradient(#dfe6e9, #222f3e);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  position: relative;
+  cursor: pointer;
 `;
 
 const Image = styled.img`
@@ -35,14 +48,31 @@ const AppSubtitle = styled.span`
   font-weight: 500;
 `;
 
-const AppImage = ({ appUrl, imageUrl, title, text }) => (
-  <Container href={appUrl} target="_blank">
-    <TitleBox>
-      <AppTitle>{title}</AppTitle>
-      <AppSubtitle>{text}</AppSubtitle>
-    </TitleBox>
-    <Image src={imageUrl} />
-  </Container>
-);
+const AppImage = ({
+  appUrl,
+  imageUrl,
+  title,
+  text,
+  visibleBox,
+  setVisibleBox,
+}) => {
+  return visibleBox ? (
+    <BoxContainer onClick={() => setVisibleBox(true)}>
+      <TitleBox>
+        <AppTitle>{title}</AppTitle>
+        <AppSubtitle>{text}</AppSubtitle>
+      </TitleBox>
+      <Image src={imageUrl} />
+    </BoxContainer>
+  ) : (
+    <LinkContainer href={appUrl} target="_blank">
+      <TitleBox>
+        <AppTitle>{title}</AppTitle>
+        <AppSubtitle>{text}</AppSubtitle>
+      </TitleBox>
+      <Image src={imageUrl} />
+    </LinkContainer>
+  );
+};
 
 export default AppImage;

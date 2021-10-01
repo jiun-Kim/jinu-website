@@ -1,6 +1,8 @@
+import { useState } from "react";
 import styled from "styled-components";
 import { appImage, appUrl } from "../apps";
 import AppImage from "../components/AppImage";
+import ChoiceBox from "../components/ChoiceBox";
 import Header from "../components/Header";
 
 const Container = styled.div``;
@@ -35,27 +37,40 @@ const Footer = styled.footer`
   margin-top: 80px;
 `;
 
-export default () => (
-  <Container>
-    <Header />
-    <Main>
-      <Title>New Release</Title>
-      <Apps>
-        <AppImage
-          appUrl={appUrl.watcha}
-          text="This app is the Netflix cloning app"
-          imageUrl={appImage.watcha}
-        />
-        <AppImage
-          appUrl={appUrl.colorselector}
-          text="Color selector app for ios & android"
-          imageUrl={appImage.colorselector}
-        />
-      </Apps>
-    </Main>
-    <Footer>
-      <span style={{ marginBottom: 20 }}>Contact: info@jiunstudio.com</span>
-      <span>&copy; {new Date().getFullYear()} JIUN STUDIO</span>
-    </Footer>
-  </Container>
-);
+const Home = () => {
+  const [visibleBox, setVisibleBox] = useState(false);
+  return (
+    <Container>
+      <Header />
+      <Main>
+        <Title>New Release</Title>
+        <Apps>
+          <AppImage
+            appUrl={appUrl.watcha}
+            text="This app is the Netflix cloning app"
+            imageUrl={appImage.watcha}
+          />
+          {visibleBox ? (
+            <ChoiceBox
+              ios={appUrl.colorselectorIos}
+              android={appUrl.colorselectorAndroid}
+            />
+          ) : (
+            <AppImage
+              text="Color selector app for ios & android"
+              imageUrl={appImage.colorselector}
+              visibleBox={true}
+              setVisibleBox={setVisibleBox}
+            />
+          )}
+        </Apps>
+      </Main>
+      <Footer>
+        <span style={{ marginBottom: 20 }}>Contact: info@jiunstudio.com</span>
+        <span>&copy; {new Date().getFullYear()} JIUN STUDIO</span>
+      </Footer>
+    </Container>
+  );
+};
+
+export default Home;
