@@ -4,12 +4,13 @@ import { appImage, appUrl } from "../apps";
 import AppImage from "../components/AppImage";
 import ChoiceBox from "../components/ChoiceBox";
 import Header from "../components/Header";
+import routes from "../routes";
+import { HelmetTitle } from "../share";
 
 const Container = styled.div``;
 
 const Main = styled.main`
   padding: 50px 30px;
-  height: 100vh;
 `;
 
 const Title = styled.h2`
@@ -41,6 +42,7 @@ const Home = () => {
   const [visibleBox, setVisibleBox] = useState(false);
   return (
     <Container>
+      <HelmetTitle title="Welcome" />
       <Header />
       <Main>
         <Title>New Release</Title>
@@ -63,6 +65,11 @@ const Home = () => {
               setVisibleBox={setVisibleBox}
             />
           )}
+          <AppImage
+            appUrl={routes.fakeLottery}
+            text="Let's prank by lottery"
+            imageUrl={appImage.fakeLottery}
+          />
         </Apps>
       </Main>
       <Footer>

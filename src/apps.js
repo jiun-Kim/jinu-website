@@ -9,4 +9,5 @@ export const appUrl = {
 export const appImage = {
   watcha: "netplix.svg",
   colorselector: "colorselector.svg",
+  fakeLottery: "fakelottery.png",
 };

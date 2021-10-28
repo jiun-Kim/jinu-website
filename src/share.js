@@ -7,3 +7,69 @@ export const HelmetTitle = ({ title }) => {
     </Helmet>
   );
 };
+
+export const autoSpaceTicket = (str) => {
+  str = str?.replace(/[^0-9]/, "");
+  let result = "";
+  if (str.length < 3) {
+    return str;
+  } else if (str.length < 9) {
+    result += str.substr(0, 2);
+    result += " ";
+    result += str.substr(2);
+    return result;
+  } else if (str.length < 15) {
+    result += str.substr(0, 2);
+    result += " ";
+    result += str.substr(2, 6);
+    result += " ";
+    result += str.substr(9);
+    return result;
+  } else if (str.length < 19) {
+    result += str.substr(0, 2);
+    result += " ";
+    result += str.substr(2, 6);
+    result += " ";
+    result += str.substr(9, 5);
+    result += " ";
+    result += str.substr(15);
+    return result;
+  } else if (str.length < 26) {
+    result += str.substr(0, 2);
+    result += " ";
+    result += str.substr(2, 6);
+    result += " ";
+    result += str.substr(9, 5);
+    result += " ";
+    result += str.substr(15, 3);
+    result += " ";
+    result += str.substr(19);
+    return result;
+  } else if (str.length < 27) {
+    result += str.substr(0, 2);
+    result += " ";
+    result += str.substr(2, 6);
+    result += " ";
+    result += str.substr(9, 5);
+    result += " ";
+    result += str.substr(15, 3);
+    result += " ";
+    result += str.substr(19, 6);
+    result += " ";
+    result += str.substr(26);
+    return result;
+  } else {
+    result += str.substr(0, 2);
+    result += " ";
+    result += str.substr(2, 6);
+    result += " ";
+    result += str.substr(9, 5);
+    result += " ";
+    result += str.substr(15, 3);
+    result += " ";
+    result += str.substr(19, 6);
+    result += " ";
+    result += str.substr(26, 2);
+    return result;
+  }
+};
