@@ -8,10 +8,9 @@ const WinningContainer = styled.div`
   align-items: center;
   color: black;
   position: absolute;
+  top: 0px;
   z-index: 10;
-  backdrop-filter: blur(10px);
-
-  top: 50px;
+  backdrop-filter: blur(15px);
 `;
 
 const WinningBox = styled.div`
