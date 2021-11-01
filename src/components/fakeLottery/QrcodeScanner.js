@@ -32,7 +32,7 @@ class QrScanner extends Component {
           facingMode={"environment"}
           onError={this.handleError}
           onScan={this.handleScan}
-          style={{ width: "100%" }}
+          style={{ width: 300 }}
         />
       </div>
     );
