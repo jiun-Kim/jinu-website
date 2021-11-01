@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useHistory, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import Header from "../../components/fakeLottery/Aus/Header";
 import Navigator from "../../components/fakeLottery/Aus/Navigator";
@@ -93,6 +93,12 @@ const AusPower = () => {
   const [winner, setWinner] = useState(false);
   const [showPrize, setShowPrize] = useState(false);
   const { state } = useLocation();
+  const history = useHistory();
+  useEffect(() => {
+    if (state === undefined) {
+      history.push("/");
+    }
+  }, [state]);
   const isMobile = useMedia({
     maxWidth: 400,
   });

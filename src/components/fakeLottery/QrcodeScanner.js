@@ -27,6 +27,7 @@ class QrScanner extends Component {
       <div>
         <QrReader
           delay={this.state.delay}
+          facingMode="rear"
           style={previewStyle}
           onError={this.handleError}
           onScan={this.handleScan}
