@@ -98,7 +98,7 @@ const AusPower = () => {
     if (state === undefined) {
       history.push("/");
     }
-  }, [state]);
+  }, [state, history]);
   const isMobile = useMedia({
     maxWidth: 400,
   });

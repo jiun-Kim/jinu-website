@@ -1,6 +1,7 @@
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
+import { useMedia } from "react-use-media";
 import styled from "styled-components";
 import { autoSpaceTicket } from "../../../share";
 import QrScanner from "../QrcodeScanner";
@@ -117,6 +118,9 @@ const successScan = (setWinner) => {
 const CheckTicket = ({ setWinner }) => {
   const [value, setValue] = useState("");
   const [qrScanner, setQrScanner] = useState(false);
+  const isMobile = useMedia({
+    maxWidth: 400,
+  });
   const onSubmit = (e) => {
     e.preventDefault();
     if (value.length < 28) {
@@ -167,9 +171,11 @@ const CheckTicket = ({ setWinner }) => {
           </TicketInput>
           <Check>
             <Button>Check ticket</Button>
-            <CameraIcon onClick={() => setQrScanner(true)}>
-              <FontAwesomeIcon icon={faCamera} />
-            </CameraIcon>
+            {isMobile ? (
+              <CameraIcon onClick={() => setQrScanner(true)}>
+                <FontAwesomeIcon icon={faCamera} />
+              </CameraIcon>
+            ) : null}
           </Check>
           <Caption>
             This service allows you to check the results of tickets you've
