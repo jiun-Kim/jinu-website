@@ -4,6 +4,7 @@ import styled from "styled-components";
 import ChooseBox from "../../components/fakeLottery/ChooseBox";
 import ChooseText from "../../components/fakeLottery/ChooseText";
 import routes from "../../routes";
+import { HelmetTitle } from "../../share";
 
 const AmountForm = styled.form`
   display: flex;
@@ -35,6 +36,7 @@ const SelectAmount = () => {
   };
   return (
     <ChooseBox>
+      <HelmetTitle title="Select Amount" />
       <ChooseText>Enter the prize money for the winner.</ChooseText>
       <AmountForm onSubmit={onSubmit}>
         <span>$</span>

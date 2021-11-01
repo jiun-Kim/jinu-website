@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { HelmetTitle } from "../../share";
 import GoHome from "../GoHome";
 
 const Container = styled.div`
@@ -19,6 +20,7 @@ const Container = styled.div`
 const Fin = () => {
   return (
     <Container>
+      <HelmetTitle title="It's Prank!" />
       <img src="../frog.gif" alt="Frog" />
       <h1>It's time to tell the truth.</h1>
       <GoHome />

@@ -24,7 +24,7 @@ const SelectCountry = () => {
   const history = useHistory();
   return (
     <Container>
-      <HelmetTitle title="Fake lottery" />
+      <HelmetTitle title="Select Country" />
       <ChooseText text="Choose the country where the lottery is issued." />
       <ChooseBox>
         <Flag

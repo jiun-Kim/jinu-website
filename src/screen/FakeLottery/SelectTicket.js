@@ -4,6 +4,7 @@ import Buttons from "../../components/fakeLottery/Buttons";
 import ChooseBox from "../../components/fakeLottery/ChooseBox";
 import ChooseText from "../../components/fakeLottery/ChooseText";
 import routes from "../../routes";
+import { HelmetTitle } from "../../share";
 
 const Container = styled.div`
   display: flex;
@@ -24,6 +25,7 @@ const SelectTicket = () => {
   const history = useHistory();
   return (
     <Container>
+      <HelmetTitle title="Select Ticket" />
       <ChooseText text="Choose the ticket where the lottery is issued." />
       {history.location.state === "Aus" && (
         <ChooseBox>

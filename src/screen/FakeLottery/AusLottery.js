@@ -99,7 +99,7 @@ const AusPower = () => {
   return (
     <div style={{ backgroundColor: "#101c4e" }}>
       <Container>
-        <HelmetTitle title="Check My Ticket" />
+        <HelmetTitle title="Congratulations!" />
         <Header />
         <Navigator isMobile={isMobile} />
         <Main>
