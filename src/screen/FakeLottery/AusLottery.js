@@ -88,6 +88,13 @@ const ClaimBtn = styled.a`
   font-weight: 600;
 `;
 
+const ConfettiBox = styled.div`
+  width: 100%;
+  left: 0px;
+  position: absolute;
+  z-index: 100;
+`;
+
 const AusPower = () => {
   const { width, height } = useWindowSize();
   const [winner, setWinner] = useState(false);
@@ -114,7 +121,9 @@ const AusPower = () => {
         <Navigator isMobile={isMobile} />
         <Main>
           {winner && (
-            <Confetti width={isMobile ? 350 : width} height={height} />
+            <ConfettiBox>
+              <Confetti width={isMobile ? 350 : width} height={height} />
+            </ConfettiBox>
           )}
           {winner ? (
             <Winner bgColor={state.country}>

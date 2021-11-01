@@ -119,7 +119,7 @@ const CheckTicket = ({ setWinner }) => {
   const [value, setValue] = useState("");
   const [qrScanner, setQrScanner] = useState(false);
   const isMobile = useMedia({
-    maxWidth: 400,
+    maxWidth: 500,
   });
   const onSubmit = (e) => {
     e.preventDefault();
