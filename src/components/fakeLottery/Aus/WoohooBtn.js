@@ -10,6 +10,7 @@ const WinningContainer = styled.div`
   position: absolute;
   z-index: 10;
   backdrop-filter: blur(10px);
+
   top: 50px;
 `;
 
@@ -45,7 +46,8 @@ const Woohoo = styled.div`
   width: 230px;
   height: 50px;
   border-radius: 30px;
-  background-color: ${(props) => props.theme.darkPurple};
+  background-color: ${(props) =>
+    props.bgColor === "Oz" ? props.theme.lightOz : props.theme.lightAusPB};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,9 +56,13 @@ const Woohoo = styled.div`
   font-size: 25px;
   margin-top: 30px;
   cursor: pointer;
+  :hover {
+    background-color: ${(props) =>
+      props.bgColor === "Oz" ? props.theme.ozLotto : props.theme.darkAusPB};
+  }
 `;
 
-const WoohooBtn = ({ showPrize, setShowPrize }) => {
+const WoohooBtn = ({ bgColor, showPrize, setShowPrize }) => {
   return (
     <WinningContainer showPrize={showPrize}>
       <WinningBox>
@@ -65,7 +71,9 @@ const WoohooBtn = ({ showPrize, setShowPrize }) => {
           <span>Congratulations!</span>
           <span>You've had a win.</span>
         </Text>
-        <Woohoo onClick={() => setShowPrize(true)}>Woohoo!</Woohoo>
+        <Woohoo bgColor={bgColor} onClick={() => setShowPrize(true)}>
+          Woohoo!
+        </Woohoo>
       </WinningBox>
     </WinningContainer>
   );

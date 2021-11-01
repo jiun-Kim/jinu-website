@@ -13,19 +13,19 @@ export const autoSpaceTicket = (str) => {
   let result = "";
   if (str.length < 3) {
     return str;
-  } else if (str.length < 9) {
+  } else if (str.length < 8) {
     result += str.substr(0, 2);
     result += " ";
     result += str.substr(2);
     return result;
-  } else if (str.length < 15) {
+  } else if (str.length < 14) {
     result += str.substr(0, 2);
     result += " ";
     result += str.substr(2, 6);
     result += " ";
     result += str.substr(9);
     return result;
-  } else if (str.length < 19) {
+  } else if (str.length < 18) {
     result += str.substr(0, 2);
     result += " ";
     result += str.substr(2, 6);
@@ -34,7 +34,7 @@ export const autoSpaceTicket = (str) => {
     result += " ";
     result += str.substr(15);
     return result;
-  } else if (str.length < 26) {
+  } else if (str.length < 25) {
     result += str.substr(0, 2);
     result += " ";
     result += str.substr(2, 6);
@@ -45,7 +45,7 @@ export const autoSpaceTicket = (str) => {
     result += " ";
     result += str.substr(19);
     return result;
-  } else if (str.length < 27) {
+  } else if (str.length < 26) {
     result += str.substr(0, 2);
     result += " ";
     result += str.substr(2, 6);

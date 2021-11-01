@@ -1,20 +1,22 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
-import Header from "../../components/fakeLottery/ausPower/Header";
-import Navigator from "../../components/fakeLottery/ausPower/Navigator";
-import Ticket from "../../components/fakeLottery/ausPower/Ticket";
+import Header from "../../components/fakeLottery/Aus/Header";
+import Navigator from "../../components/fakeLottery/Aus/Navigator";
 import { HelmetTitle } from "../../share";
 import { useWindowSize } from "react-use";
 import Confetti from "react-confetti";
-import WoohooBtn from "../../components/fakeLottery/ausPower/WoohooBtn";
+import WoohooBtn from "../../components/fakeLottery/Aus/WoohooBtn";
 import routes from "../../routes";
+import { useMedia } from "react-use-media";
+import CheckTicket from "../../components/fakeLottery/Aus/CheckTicket";
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
   min-height: 100vh;
+  box-sizing: border-box;
 `;
 
 const Main = styled.main`
@@ -37,7 +39,8 @@ const MainTitle = styled.div`
 
 const Winner = styled.div`
   height: 100vh;
-  background-color: #3553a4;
+  background-color: ${(props) =>
+    props.bgColor === "Oz" ? props.theme.ozLotto : props.theme.powerball};
   color: white;
   display: flex;
   justify-content: center;
@@ -90,21 +93,40 @@ const AusPower = () => {
   const [winner, setWinner] = useState(false);
   const [showPrize, setShowPrize] = useState(false);
   const { state } = useLocation();
+  const isMobile = useMedia({
+    maxWidth: 400,
+  });
   return (
     <div style={{ backgroundColor: "#101c4e" }}>
       <Container>
         <HelmetTitle title="Check My Ticket" />
         <Header />
-        <Navigator />
+        <Navigator isMobile={isMobile} />
         <Main>
-          {winner && <Confetti width={width} height={height} />}
+          {winner && (
+            <Confetti width={isMobile ? 350 : width} height={height} />
+          )}
           {winner ? (
-            <Winner>
-              <img src="https://www.ozlotteries.com/public/images/pub/meta/au/powerball2018.jpg" />
-              <WoohooBtn showPrize={showPrize} setShowPrize={setShowPrize} />
+            <Winner bgColor={state.country}>
+              {state.country === "Oz" ? (
+                <img
+                  alt="Oz lotto logo"
+                  src="https://www.ozlotteries.com/public/images/pub/meta/au/oz_lotto.jpg"
+                />
+              ) : (
+                <img
+                  alt="Powerball logo"
+                  src="https://www.ozlotteries.com/public/images/pub/meta/au/powerball2018.jpg"
+                />
+              )}
+              <WoohooBtn
+                bgColor={state.country}
+                showPrize={showPrize}
+                setShowPrize={setShowPrize}
+              />
               <AmountBox>
                 <h3>YOU HAVE WON:</h3>
-                <h1>${state.toLocaleString("en-AU")}</h1>
+                <h1>${state.amount.toLocaleString("en-AU")}</h1>
               </AmountBox>
               <p>
                 Congratulations, you have won a Division 1 prize!. If you
@@ -118,7 +140,7 @@ const AusPower = () => {
               <MainTitle>
                 <h1>Check my ticket</h1>
               </MainTitle>
-              <Ticket setWinner={setWinner} />
+              <CheckTicket setWinner={setWinner} />
             </>
           )}
         </Main>

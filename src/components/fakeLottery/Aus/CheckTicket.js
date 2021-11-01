@@ -52,7 +52,7 @@ const TicketText = styled.div`
   }
 `;
 
-const CheckTicket = styled.div`
+const Check = styled.div`
   display: flex;
   align-items: center;
   padding: 20px;
@@ -61,22 +61,30 @@ const CheckTicket = styled.div`
 const CameraIcon = styled.div`
   font-size: 23px;
   margin-left: 20px;
-  color: ${(props) => props.theme.lightPurple};
-  border: 3px solid ${(props) => props.theme.lightPurple};
+  color: ${(props) => props.theme.lightAusPB};
+  border: 3px solid ${(props) => props.theme.lightAusPB};
   padding: 10px;
   border-radius: 50%;
+  cursor: pointer;
+  :hover {
+    color: ${(props) => props.theme.darkAusPB};
+    border: 3px solid ${(props) => props.theme.darkAusPB};
+  }
 `;
 
 const Button = styled.button`
   width: 100%;
   height: 44px;
-  padding: 0 60px;
-  background-color: ${(props) => props.theme.lightPurple};
+  padding: 5px 30px;
+  background-color: ${(props) => props.theme.lightAusPB};
   color: white;
   font-size: 18px;
   border: none;
   border-radius: 50px;
   cursor: pointer;
+  :hover {
+    background-color: ${(props) => props.theme.darkAusPB};
+  }
 `;
 
 const Caption = styled.h1`
@@ -85,26 +93,28 @@ const Caption = styled.h1`
   font-weight: 700;
   color: rgba(0, 0, 0, 0.8);
   text-align: center;
-  margin: 0 20px;
   margin-bottom: 50px;
 `;
 
 const BackBtn = styled.div`
   width: 120px;
-  background-color: ${(props) => props.theme.lightPurple};
+  background-color: ${(props) => props.theme.lightAusPB};
   text-align: center;
   color: white;
   padding: 10px;
   border-radius: 25px;
   margin-top: 20px;
   cursor: pointer;
+  :hover {
+    background-color: ${(props) => props.theme.darkAusPB};
+  }
 `;
 
 const successScan = (setWinner) => {
   setTimeout(() => setWinner(true), 9000);
 };
 
-const Ticket = ({ setWinner }) => {
+const CheckTicket = ({ setWinner }) => {
   const [value, setValue] = useState("");
   const [qrScanner, setQrScanner] = useState(false);
   const onSubmit = (e) => {
@@ -119,10 +129,15 @@ const Ticket = ({ setWinner }) => {
     if (qrScanner) {
       successScan(setWinner);
     }
-  }, [qrScanner]);
+  }, [qrScanner, setWinner]);
 
   const onChange = (e) => {
     const v = e.target.value;
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Backspace") {
+        setValue(v.substr(0, v.length));
+      }
+    });
     setValue(autoSpaceTicket(v));
   };
   return (
@@ -134,7 +149,7 @@ const Ticket = ({ setWinner }) => {
         </>
       ) : (
         <>
-          <img src="../auspowerticket.png" />
+          <img src="../auspowerticket.png" alt="AusPowerball ticket" />
           <TicketInput>
             <h3>Enter your entire ticket number</h3>
             <div>
@@ -150,12 +165,12 @@ const Ticket = ({ setWinner }) => {
               </TicketText>
             </div>
           </TicketInput>
-          <CheckTicket>
+          <Check>
             <Button>Check ticket</Button>
             <CameraIcon onClick={() => setQrScanner(true)}>
               <FontAwesomeIcon icon={faCamera} />
             </CameraIcon>
-          </CheckTicket>
+          </Check>
           <Caption>
             This service allows you to check the results of tickets you've
             purchased in-store. Bought your entry online? As an online member
@@ -168,4 +183,4 @@ const Ticket = ({ setWinner }) => {
   );
 };
 
-export default Ticket;
+export default CheckTicket;

@@ -4,9 +4,13 @@ import { HelmetProvider } from "react-helmet-async";
 import Home from "./screen/Home";
 import { ThemeProvider } from "styled-components";
 import theme from "./theme";
-import FakeLottery from "./screen/FakeLottery/FakeLottery";
-import AusPower from "./screen/FakeLottery/AusPower";
 import Fin from "./components/fakeLottery/Fin";
+import routes from "./routes";
+import FakeLottery from "./screen/FakeLottery/FakeLottery";
+import SelectTicket from "./screen/FakeLottery/SelectTicket";
+import SelectCountry from "./screen/FakeLottery/SelectCountry";
+import SelectAmount from "./screen/FakeLottery/SelectAmount";
+import AusLottery from "./screen/FakeLottery/AusLottery";
 function App() {
   return (
     <>
@@ -15,16 +19,25 @@ function App() {
           <GlobalStyle />
           <Router>
             <Switch>
-              <Route exact path="/">
+              <Route exact path={routes.home}>
                 <Home />
               </Route>
-              <Route exact path="/fakelottery">
+              <Route exact path={routes.fakeLottery}>
                 <FakeLottery />
               </Route>
-              <Route exact path="/fakelottery/australia">
-                <AusPower />
+              <Route exact path={routes.fakeLotteryCountry}>
+                <SelectCountry />
               </Route>
-              <Route exact path="/fakelottery/fin">
+              <Route exact path={routes.fakeLotteryTicket}>
+                <SelectTicket />
+              </Route>
+              <Route exact path={routes.fakeLotteryAmount}>
+                <SelectAmount />
+              </Route>
+              <Route exact path={routes.fakeLotteryAus}>
+                <AusLottery />
+              </Route>
+              <Route exact path={routes.fakeLotteryFin}>
                 <Fin />
               </Route>
             </Switch>

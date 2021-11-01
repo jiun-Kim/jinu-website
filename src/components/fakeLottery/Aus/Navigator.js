@@ -17,7 +17,7 @@ const Container = styled.div`
   }
 `;
 
-const Navigator = () => (
+const Navigator = ({ isMobile }) => (
   <Container>
     <ul>
       <li>
@@ -27,7 +27,7 @@ const Navigator = () => (
         <span>Results</span>
       </li>
       <li>
-        <span>Real Winners</span>
+        <span>{isMobile ? "Winners" : "Real Winners"}</span>
       </li>
       <li>
         <span>More</span>

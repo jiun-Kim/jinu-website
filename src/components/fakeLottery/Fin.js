@@ -19,7 +19,7 @@ const Container = styled.div`
 const Fin = () => {
   return (
     <Container>
-      <img src="../frog.gif" />
+      <img src="../frog.gif" alt="Frog" />
       <h1>It's time to tell the truth.</h1>
       <GoHome />
     </Container>

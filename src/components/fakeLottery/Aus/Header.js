@@ -38,7 +38,7 @@ const LoginBox = styled.div`
   height: 34px;
   padding: 0 15px;
   border-radius: 22px;
-  margin-right: 32px;
+  margin-right: calc(2vw + 10px);
   background-color: ${(props) => props.theme.lightPurple};
   display: flex;
   justify-content: space-between;
