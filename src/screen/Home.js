@@ -42,7 +42,7 @@ const Home = () => {
   const [visibleBox, setVisibleBox] = useState(false);
   return (
     <Container>
-      <HelmetTitle title="여러분들의 아이디어를 현실로 만들어 드립니다." />
+      <HelmetTitle title="We make your idea a reality." />
       <Header />
       <Main>
         <Title>New Release</Title>
