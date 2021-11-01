@@ -14,6 +14,7 @@ const Container = styled.div`
     border-radius: 20px;
     cursor: pointer;
     font-weight: bold;
+    color: black;
   }
 `;
 
