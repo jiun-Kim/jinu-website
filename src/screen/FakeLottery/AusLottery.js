@@ -99,7 +99,11 @@ const AusPower = () => {
   return (
     <div style={{ backgroundColor: "#101c4e" }}>
       <Container>
-        <HelmetTitle title="Congratulations!" />
+        {winner ? (
+          <HelmetTitle title="Congratulations!" />
+        ) : (
+          <HelmetTitle title="Check Ticket" />
+        )}
         <Header />
         <Navigator isMobile={isMobile} />
         <Main>
