@@ -183,6 +183,11 @@ const CheckTicket = ({ setWinner }) => {
             we'll send you an email if you've had a win, or you can check your
             ticket history by logging into your account.
           </Caption>
+          <img
+            style={{ width: "70%", minWidth: 400 }}
+            src="../ausbanner.png"
+            alt="ausbanner"
+          />
         </>
       )}
     </Container>
