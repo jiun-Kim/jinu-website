@@ -6,6 +6,7 @@ const routes = {
   fakeLotteryAmount: "/fakelottery/amount",
   fakeLotteryAus: "/fakelottery/australia",
   fakeLotteryFin: "/fakelottery/fin",
+  privacy: "/privacy",
 };
 
 export default routes;

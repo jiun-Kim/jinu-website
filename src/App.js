@@ -11,6 +11,7 @@ import SelectTicket from "./screen/FakeLottery/SelectTicket";
 import SelectCountry from "./screen/FakeLottery/SelectCountry";
 import SelectAmount from "./screen/FakeLottery/SelectAmount";
 import AusLottery from "./screen/FakeLottery/AusLottery";
+import Privacy from "./screen/Privacy";
 function App() {
   return (
     <>
@@ -39,6 +40,9 @@ function App() {
               </Route>
               <Route exact path={routes.fakeLotteryFin}>
                 <Fin />
+              </Route>
+              <Route exact path={routes.privacy}>
+                <Privacy />
               </Route>
             </Switch>
           </Router>
