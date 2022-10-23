@@ -26,8 +26,9 @@ const BoxContainer = styled.div`
 `;
 
 const Image = styled.img`
-  width: 300px;
-  height: 230px;
+  width: 150px;
+  height: 150px;
+  border-radius: 10%;
 `;
 const TitleBox = styled.div`
   width: 90%;
@@ -48,16 +49,9 @@ const AppSubtitle = styled.span`
   font-weight: 500;
 `;
 
-const AppImage = ({
-  appUrl,
-  imageUrl,
-  title,
-  text,
-  visibleBox,
-  setVisibleBox,
-}) => {
+const AppImage = ({ appUrl, imageUrl, title, text, visibleBox, onClick }) => {
   return visibleBox ? (
-    <BoxContainer onClick={() => setVisibleBox(true)}>
+    <BoxContainer onClick={onClick}>
       <TitleBox>
         <AppTitle>{title}</AppTitle>
         <AppSubtitle>{text}</AppSubtitle>

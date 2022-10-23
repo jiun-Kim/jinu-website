@@ -39,20 +39,46 @@ const Footer = styled.footer`
 `;
 
 const Home = () => {
-  const [visibleBox, setVisibleBox] = useState(false);
+  const [visibleBox, setVisibleBox] = useState(0);
   return (
     <Container>
       <HelmetTitle title="We make your idea a reality." />
       <Header />
       <Main>
-        <Title>New Release</Title>
+        <Title>Web</Title>
         <Apps>
+          <AppImage
+            appUrl="https://goodideapainting.com.au"
+            text="Painting web site"
+            imageUrl={appImage.goodideapainting}
+          />
+          <AppImage
+            appUrl="https://mareeba.app"
+            text="Hoju No.1 community market Mareeba web site"
+            imageUrl={appImage.mareeba}
+          />
           <AppImage
             appUrl={appUrl.watcha}
             text="This app is the Netflix cloning app"
             imageUrl={appImage.watcha}
           />
-          {visibleBox ? (
+          <AppImage
+            appUrl={routes.fakeLottery}
+            text="Let's prank by lottery"
+            imageUrl={appImage.fakeLottery}
+          />
+
+          <AppImage
+            appUrl="http://neost.com.au"
+            text="Web & app hosting business"
+            imageUrl={appImage.neost}
+          />
+        </Apps>
+      </Main>
+      <Main>
+        <Title>App</Title>
+        <Apps>
+          {visibleBox === 1 ? (
             <ChoiceBox
               ios={appUrl.colorselectorIos}
               android={appUrl.colorselectorAndroid}
@@ -62,14 +88,35 @@ const Home = () => {
               text="Color selector app for ios & android"
               imageUrl={appImage.colorselector}
               visibleBox={true}
-              setVisibleBox={setVisibleBox}
+              onClick={() => setVisibleBox(1)}
             />
           )}
-          <AppImage
-            appUrl={routes.fakeLottery}
-            text="Let's prank by lottery"
-            imageUrl={appImage.fakeLottery}
-          />
+          {visibleBox === 2 ? (
+            <ChoiceBox
+              ios={appUrl.colorselectorIos}
+              android={appUrl.inAndOutAndroid}
+            />
+          ) : (
+            <AppImage
+              text="In & Out app for ios & android"
+              imageUrl={appImage.inAndOut}
+              visibleBox={true}
+              onClick={() => setVisibleBox(2)}
+            />
+          )}
+          {visibleBox === 3 ? (
+            <ChoiceBox
+              ios={appUrl.colorselectorIos}
+              android={appUrl.luckyGenAndroid}
+            />
+          ) : (
+            <AppImage
+              text="Luck Gen app for ios & android"
+              imageUrl={appImage.luckyGen}
+              visibleBox={true}
+              onClick={() => setVisibleBox(3)}
+            />
+          )}
         </Apps>
       </Main>
       <Footer>
